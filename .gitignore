@@ -1,0 +1,42 @@
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Node modules (if using any Node tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Database files (SQLite)
+*.db
+*.db-shm
+*.db-wal
+invoices.db
+invoices.db-*
+
+# PHP files
+*.log
+*.bak
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Build artifacts
+dist/
+build/
+
+# Backup files
+*.backup
+*.bak
+*_backup.*

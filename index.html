@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Billing System</h1>
+            <p class="subtitle"> Invoice Management</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Billing Form -->
+            <section class="billing-form">
+                <h2>Create Invoice</h2>
+                <form id="billingForm">
+                    <div class="form-group">
+                        <label for="clientName">Client Name:</label>
+                        <input type="text" id="clientName" name="clientName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount (ugx):</label>
+                        <input type="number" id="amount" name="amount" step="0.01" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taxRate">Tax Rate (%):</label>
+                        <input type="number" id="taxRate" name="taxRate" step="0.01" value="10" min="0" max="100">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Generate Invoice</button>
+                </form>
+            </section>
+
+            <!-- Invoice Display -->
+            <section class="invoice-display" id="invoiceSection" style="display: none;">
+                <h2>Invoice Preview</h2>
+                <div class="invoice">
+                    <div class="invoice-header">
+                        <h3>Invoice</h3>
+                        <p id="invoiceDate"></p>
+                    </div>
+
+                    <div class="invoice-details">
+                        <div>
+                            <h4>Bill To:</h4>
+                            <p id="invoiceClient"></p>
+                            <p id="invoiceEmail"></p>
+                        </div>
+                    </div>
+
+                    <table class="invoice-table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="invoiceDesc"></td>
+                                <td id="invoiceAmt"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="invoice-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">UGX 0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax:</span>
+                            <span id="tax">UGX 0.00</span>
+                        </div>
+                        <div class="total-row final">
+                            <span>Total:</span>
+                            <span id="total">UGX 0.00</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-print" onclick="window.print()">Print Invoice</button>
+                    <button class="btn-send" onclick="sendInvoice()">Send via Email</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Developers Section -->
+        <section class="developers">
+            <h2> Development Team</h2>
+            <div class="dev-grid">
+                <div class="dev-card">
+                    <div class="dev-avatar">NS</div>
+                    <h3>NANTONGO SUMAYIYA</h3>
+                    <p>2300715309</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">mm</div>
+                    <h3>mwesigwa mathew</h3>
+                    <p>2300712553</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">HB</div>
+                    <h3>HARMAN BATULI</h3>
+                    <p>2300707489</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">HA</div>
+                    <h3>HOPE ATIZUYO</h3>
+                    <p>2300706809</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">NH</div>
+                    <h3>NAMUSWE HAMIDAH</h3>
+                    <p>2300714899</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">TE</div>
+                    <h3>ELION TUMWZIWERE</h3>
+                    <p>2300718178</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">CM</div>
+                    <h3>CHEROTICH MOLLY CHEMOWO</h3>
+                    <p>2300715309</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">AE</div>
+                    <h3>ARINDE EDWINE</h3>
+                    <p>2300706480</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">MJ</div>
+                    <h3>MWESIGWA JOEL </h3>
+                    <p>2300700925</p>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-avatar">AR</div>
+                    <h3>ASERU RITAH</h3>
+                    <p>2300706560</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; wsa 2026 Group W. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
